@@ -1,13 +1,42 @@
-import { Animated, Basic, bounce, Combined } from '../shared/styles'
+import { css, keyframes } from "@emotion/react";
+import styled from "@emotion/styled";
+
+const base = css`
+  @media (min-width: 420px) {
+    background-color: pink;
+  }
+`;
+
+const hoge = "hoge";
 
 const Home = () => (
-  <div>
-    <Basic>Cool Styles</Basic>
-    <Combined>
-      With <code>:hover</code>.
-    </Combined>
-    <Animated animation={bounce}>Let's bounce.</Animated>
-  </div>
-)
+  <>
+    <style>
+      {`
+        .danger {
+          color: red;
+        }
+        .base {
+          background-color: lightgray;
+          color: turquoise;
+        }
+      `}
+    </style>
+    <SomeComp
+      as="a"
+      href="dddd"
+      className={"danger base"}
+      css={css`
+        ${base}
+      `}
+    >
+      <div className="hoge">aaa</div>
+    </SomeComp>
+  </>
+);
 
-export default Home
+export default Home;
+
+let SomeComp = styled.div({
+  color: "hotpink",
+});
