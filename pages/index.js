@@ -12,6 +12,7 @@ const hoge = "hoge";
 const Home = () => (
   <>
     <div>master1</div>
+    <div>master2</div>
     <style>
       {`
         .danger {
